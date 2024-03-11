@@ -1,0 +1,285 @@
+so the error was when detaching threads in the main process after one of them has died or if they all have eaten enough the problem when i detach them is that they still keep running but after doing that i destroy the mutexes and try to lock them in the running threads so what i have to do is to join them and in the the function when i sleep i have to break once the simulation have been done alse check if it s done before doing any thing else
+
+and that what happens
+
+------------------------------------------------
+➜  philo git:(main) ✗ ./philo 199 69 69 69                                      
+0 1 has taken a fork
+0 1 has taken a fork
+0 1 is eating
+0 5 has taken a fork
+0 5 has taken a fork
+0 5 is eating
+0 7 has taken a fork
+0 7 has taken a fork
+0 7 is eating
+0 3 has taken a fork
+0 11 has taken a fork
+0 11 has taken a fork
+0 11 is eating
+0 13 has taken a fork
+0 13 has taken a fork
+0 13 is eating
+0 3 has taken a fork
+0 3 is eating
+0 17 has taken a fork
+0 17 has taken a fork
+0 17 is eating
+0 15 has taken a fork
+0 15 has taken a fork
+0 15 is eating
+0 19 has taken a fork
+0 19 has taken a fork
+0 19 is eating
+0 21 has taken a fork
+0 21 has taken a fork
+0 21 is eating
+0 9 has taken a fork
+0 9 has taken a fork
+0 9 is eating
+0 23 has taken a fork
+0 23 has taken a fork
+0 23 is eating
+0 25 has taken a fork
+0 25 has taken a fork
+0 25 is eating
+0 27 has taken a fork
+0 27 has taken a fork
+0 27 is eating
+0 29 has taken a fork
+0 29 has taken a fork
+0 29 is eating
+0 31 has taken a fork
+0 31 has taken a fork
+0 31 is eating
+0 33 has taken a fork
+0 33 has taken a fork
+0 33 is eating
+0 53 has taken a fork
+0 53 has taken a fork
+0 53 is eating
+0 55 has taken a fork
+0 55 has taken a fork
+0 55 is eating
+0 57 has taken a fork
+0 57 has taken a fork
+1 57 is eating
+1 59 has taken a fork
+1 59 has taken a fork
+1 59 is eating
+1 61 has taken a fork
+1 61 has taken a fork
+1 61 is eating
+1 36 has taken a fork
+1 36 has taken a fork
+1 36 is eating
+1 63 has taken a fork
+1 63 has taken a fork
+1 63 is eating
+1 65 has taken a fork
+1 65 has taken a fork
+1 65 is eating
+1 67 has taken a fork
+1 67 has taken a fork
+1 67 is eating
+1 35 has taken a fork
+1 40 has taken a fork
+1 40 has taken a fork
+1 40 is eating
+1 69 has taken a fork
+1 69 has taken a fork
+1 69 is eating
+1 39 has taken a fork
+1 43 has taken a fork
+1 43 has taken a fork
+1 43 is eating
+1 71 has taken a fork
+1 71 has taken a fork
+1 71 is eating
+1 47 has taken a fork
+1 47 has taken a fork
+1 47 is eating
+1 49 has taken a fork
+1 49 has taken a fork
+1 49 is eating
+1 73 has taken a fork
+1 73 has taken a fork
+1 73 is eating
+1 115 has taken a fork
+1 115 has taken a fork
+1 115 is eating
+1 117 has taken a fork
+1 117 has taken a fork
+1 117 is eating
+1 119 has taken a fork
+1 119 has taken a fork
+1 119 is eating
+1 76 has taken a fork
+1 76 has taken a fork
+1 76 is eating
+1 78 has taken a fork
+1 78 has taken a fork
+1 78 is eating
+1 123 has taken a fork
+1 123 has taken a fork
+1 123 is eating
+1 80 has taken a fork
+1 80 has taken a fork
+1 80 is eating
+1 84 has taken a fork
+1 84 has taken a fork
+1 84 is eating
+1 127 has taken a fork
+1 127 has taken a fork
+1 127 is eating
+1 86 has taken a fork
+1 86 has taken a fork
+1 42 has taken a fork
+1 75 has taken a fork
+1 90 has taken a fork
+1 90 has taken a fork
+1 90 is eating
+1 129 has taken a fork
+1 129 has taken a fork
+1 129 is eating
+1 38 has taken a fork
+1 131 has taken a fork
+1 131 has taken a fork
+1 131 is eating
+1 46 has taken a fork
+1 83 has taken a fork
+1 92 has taken a fork
+1 92 has taken a fork
+1 92 is eating
+1 133 has taken a fork
+1 133 has taken a fork
+1 133 is eating
+1 94 has taken a fork
+1 94 has taken a fork
+1 94 is eating
+1 52 has taken a fork
+1 135 has taken a fork
+1 135 has taken a fork
+1 135 is eating
+1 45 has taken a fork
+1 96 has taken a fork
+1 96 has taken a fork
+1 96 is eating
+1 89 has taken a fork
+1 98 has taken a fork
+1 98 has taken a fork
+1 98 is eating
+1 121 has taken a fork
+1 121 has taken a fork
+1 121 is eating
+1 137 has taken a fork
+1 137 has taken a fork
+1 137 is eating
+1 139 has taken a fork
+1 139 has taken a fork
+1 139 is eating
+1 51 has taken a fork
+1 141 has taken a fork
+1 141 has taken a fork
+1 141 is eating
+1 100 has taken a fork
+1 100 has taken a fork
+1 100 is eating
+1 102 has taken a fork
+1 102 has taken a fork
+1 102 is eating
+1 82 has taken a fork
+1 104 has taken a fork
+1 104 has taken a fork
+1 104 is eating
+1 143 has taken a fork
+1 143 has taken a fork
+1 143 is eating
+2 158 has taken a fork
+2 158 has taken a fork
+2 158 is eating
+2 160 has taken a fork
+2 160 has taken a fork
+2 160 is eating
+2 162 has taken a fork
+2 162 has taken a fork
+2 162 is eating
+2 164 has taken a fork
+2 164 has taken a fork
+2 164 is eating
+2 106 has taken a fork
+2 106 has taken a fork
+2 106 is eating
+1 88 has taken a fork
+2 166 has taken a fork
+2 166 has taken a fork
+2 166 is eating
+2 172 has taken a fork
+2 172 has taken a fork
+2 172 is eating
+2 148 has taken a fork
+1 86 is eating
+2 145 has taken a fork
+2 176 has taken a fork
+2 108 has taken a fork
+2 110 has taken a fork
+2 174 has taken a fork
+2 112 has taken a fork
+2 178 has taken a fork
+2 180 has taken a fork
+2 111 has taken a fork
+2 109 has taken a fork
+2 113 has taken a fork
+2 114 has taken a fork
+2 188 has taken a fork
+2 190 has taken a fork
+2 147 has taken a fork
+2 125 has taken a fork
+2 149 has taken a fork
+2 182 has taken a fork
+2 184 has taken a fork
+2 186 has taken a fork
+2 192 has taken a fork
+2 196 has taken a fork
+2 151 has taken a fork
+2 153 has taken a fork
+2 155 has taken a fork
+2 157 has taken a fork
+2 194 has taken a fork
+2 168 has taken a fork
+2 170 has taken a fork
+2 126 has taken a fork
+2 198 has taken a fork
+2 169 has taken a fork
+2 171 has taken a fork
+2 175 has taken a fork
+2 177 has taken a fork
+2 179 has taken a fork
+2 181 has taken a fork
+2 183 has taken a fork
+2 185 has taken a fork
+2 187 has taken a fork
+2 189 has taken a fork
+2 191 has taken a fork
+2 193 has taken a fork
+2 195 has taken a fork
+2 197 has taken a fork
+2 199 has taken a fork
+2 150 has taken a fork
+2 152 has taken a fork
+2 154 has taken a fork
+2 146 has taken a fork
+2 156 has taken a fork
+69 105 died
+3139393256 69 is sleeping
+3139393256 119 is sleeping
+3139393256 123 is sleeping
+3139393256 133 is sleeping
+3139393256 129 is sleeping
+3139393256 104 is sleeping
+3139393256 121 is sleeping
+3139393256 96 is sleeping
+3139393256 135 is sleeping
+3139393256 98 is sleeping
+3139393256 139 is sleeping
+-------------------------------------------
